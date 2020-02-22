@@ -86,7 +86,7 @@ namespace VipixToolBox.Items
                 {
                     tileToCreate = player.inventory[i].createTile;
 
-                    if (tileToCreate > -1 && Main.tileSolid[player.inventory[i].createTile]) {
+                    if (tileToCreate > -1 && Main.tileSolid[player.inventory[i].createTile] && player.inventory[i].stack > 0) {
                         itemIndex = i;
                         break;
                     }
