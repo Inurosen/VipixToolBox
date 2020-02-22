@@ -34,7 +34,7 @@ namespace VipixToolBox.Items
 			item.scale = 1f;
 			item.rare = 2;
 			item.UseSound = SoundID.Item1;
-			item.shoot = mod.ProjectileType<RattleSnakeWandProjectile>();
+			item.shoot = ModContent.ProjectileType<RattleSnakeWandProjectile>();
 			item.value = Item.buyPrice(0, 0, 40, 0);
 			item.noMelee = true; // Important because the spear is acutally a projectile instead of an item. This prevents the melee hitbox of this item.
 			item.noUseGraphic = true; // Important, it's kind of wired if people see two spears at one time. This prevents the melee animation of this item.
@@ -62,7 +62,7 @@ namespace VipixToolBox.Items
 			//this method determines if the pointed block is a type of sand in range of the player
 			//it shows the item icon if true
 			//and it allows the actions in CanUseItem
-			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>(mod);
+			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>();
 			toolRange = Math.Max(baseRange, myPlayer.fargoRange);//blocks
 
 			if (Vector2.Distance(player.position,myPlayer.pointerCoord) < toolRange*16 &&
@@ -81,7 +81,7 @@ namespace VipixToolBox.Items
 
 		public override bool CanUseItem(Player player)
 		{
-			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>(mod);
+			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>();
 			//Main.NewText(new Vector2(myPlayer.pointedTileX,myPlayer.pointedTileY).ToString(),255,255,255);
 			if (operationAllowed)
 			{

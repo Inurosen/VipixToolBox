@@ -4,6 +4,7 @@ using Terraria.ModLoader;
 using Terraria.ObjectData;//TileObjectData
 using Terraria.DataStructures;//PlacementHook
 using Terraria.Enums;//AnchorType
+using static Terraria.ModLoader.ModContent;
 
 namespace VipixToolBox.Tiles
 {
@@ -40,7 +41,7 @@ namespace VipixToolBox.Tiles
 		public override void PlaceInWorld (int i, int j, Item item)
 		{
 			//in case the block is placed manually
-			int id = mod.GetTileEntity<FlyingBlockTE>().Find(i, j);
+			int id = ModContent.GetInstance<FlyingBlockTE>().Find(i, j);
 			//looking for the ID of the tileEntity we just placed
 			//because there is no tileEntity hook for after placement
 			if (id != -1)
@@ -52,8 +53,10 @@ namespace VipixToolBox.Tiles
 				myTE.tileY = j;
 			}
 		}
-		public override void RightClick(int i, int j)
-		{/*
+		public override bool NewRightClick(int i, int j)
+		{
+            return false;
+            /*
 			int id = mod.GetTileEntity<FlyingBlockTE>().Find(i, j);
 			if (id != -1)
 			{

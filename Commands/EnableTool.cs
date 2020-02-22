@@ -31,7 +31,7 @@ namespace VipixToolBox.Commands
     {
       Mod myMod = ModLoader.GetMod("VipixToolBox");
       Player player = Main.player[Main.myPlayer];
-      bool allTools = false;
+      //bool allTools = false;
       var keys = new List<string>(VipixToolBoxWorld.toolEnabled.Keys);
       string displaykeys = "";
       foreach(string i in keys) displaykeys += i + ", ";

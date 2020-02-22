@@ -79,7 +79,7 @@ namespace VipixToolBox.UI
 			//setting the UI at the mouse position
 			Mod myMod = ModLoader.GetMod("VipixToolBox");
 			Player player = Main.player[Main.myPlayer];
-			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>(myMod);//well that looks complicated
+			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>();//well that looks complicated
 			if (myPlayer.centerUI == 1)
 			{
 				backgroundPanel.Left.Set(myPlayer.tbMouseX - panelWidth/2 ,0f);//exceeding the coordinates of the screen seems already handled
@@ -98,7 +98,7 @@ namespace VipixToolBox.UI
 		{
 			Mod myMod = ModLoader.GetMod("VipixToolBox");
 			Player player = Main.player[Main.myPlayer];
-			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>(myMod);
+			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>();
 			Tile tile = Main.tile[myPlayer.tileX,myPlayer.tileY];
 			//the tile change is done here instead of useItem otherwise you wouldnt have the time to click on the button
 			switch (index)

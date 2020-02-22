@@ -44,7 +44,7 @@ namespace VipixToolBox.Items
 		public override void HoldItem (Player player)
 		{
 			//for showing the icon when an action is allowed
-			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>(mod);
+			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>();
 			toolRange = Math.Max(baseRange, myPlayer.fargoRange);//blocks
 			if (Vector2.Distance(player.position , myPlayer.pointerCoord) < toolRange*16 && myPlayer.spotlight && VipixToolBoxWorld.toolEnabled["ColorPalette"])
 			{
@@ -80,7 +80,7 @@ namespace VipixToolBox.Items
 		}
 		public override bool CanUseItem(Player player)
 		{
-			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>(mod);
+			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>();
 			if (player.altFunctionUse == 2)
 			{
 				//sending mouse coordinates (at the moment of the click) to VipixToolBoxPlayer for UI position

@@ -34,7 +34,7 @@ namespace VipixToolBox.Items
 		}
 		public override void HoldItem (Player player)
 		{
-			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>(mod);
+			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>();
 			toolRange = Math.Max(baseRange, myPlayer.fargoRange);//blocks
 			if (Vector2.Distance(player.position, myPlayer.pointerCoord) < toolRange*16 && VipixToolBoxWorld.toolEnabled["WallHammer"])
 			{
@@ -49,7 +49,7 @@ namespace VipixToolBox.Items
 		}
 		public override bool UseItem(Player player)
 		{
-			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>(mod);
+			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>();
 			if (operationAllowed)
 			{
 				WorldGen.KillWall(myPlayer.pointedTileX, myPlayer.pointedTileY, false);

@@ -36,7 +36,7 @@ namespace VipixToolBox.Items
 		public override void HoldItem(Player player)
 		{
 			//for showing the icon when an action is allowed
-			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>(mod);
+			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>();
 			toolRange = Math.Max(baseRange, myPlayer.fargoRange);//blocks
 			if (myPlayer.pointedTile.active() &&
 			myPlayer.pointedTileAbove.type != TileID.Trees &&
@@ -58,7 +58,7 @@ namespace VipixToolBox.Items
 
 		public override bool CanUseItem(Player player)
 		{
-			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>(mod);
+			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>();
 			if (Main.hardMode) item.damage = 30;
 			else item.damage = 10;
 			//the damage will be updated everytime the player tries to use the hammer...

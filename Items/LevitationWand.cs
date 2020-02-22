@@ -8,6 +8,7 @@ using Terraria.ObjectData;//TileObjectData
 using Terraria.DataStructures;//PlacementHook
 using VipixToolBox.Projectiles;
 using VipixToolBox.Tiles;
+using static Terraria.ModLoader.ModContent;
 
 namespace VipixToolBox.Items
 {
@@ -47,7 +48,7 @@ namespace VipixToolBox.Items
 		}
 		public override void HoldItem(Player player)
 		{
-			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>(mod);
+			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>();
 			toolRange = Math.Max(baseRange, myPlayer.fargoRange);//blocks
 
 			if (Vector2.Distance(player.position,myPlayer.pointerCoord) < toolRange*16 &&
@@ -67,7 +68,7 @@ namespace VipixToolBox.Items
 		public override bool CanUseItem(Player player)
 		{
 			FlyingBlockTE myTE;
-			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>(mod);
+			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>();
 			toolRange = Math.Max(baseRange, myPlayer.fargoRange);//blocks
 
 			Tile tile = Main.tile[myPlayer.pointedTileX,myPlayer.pointedTileY];
@@ -89,7 +90,7 @@ namespace VipixToolBox.Items
 					WorldGen.PlaceTile(myPlayer.pointedTileX,myPlayer.pointedTileY, (ushort)mod.TileType("FlyingBlockTile"));//respects tile properties
 					//WorldGen.SquareTileFrame(myPlayer.pointedTileX, myPlayer.pointedTileY, true);
 					if (Main.netMode == 1) NetMessage.SendTileSquare(-1, myPlayer.pointedTileX, myPlayer.pointedTileY, 1);
-					int id = mod.GetTileEntity<FlyingBlockTE>().Find(myPlayer.pointedTileX,myPlayer.pointedTileY);
+					int id = ModContent.GetInstance<FlyingBlockTE>().Find(myPlayer.pointedTileX,myPlayer.pointedTileY);
 					if (id != -1)
 					{
 						//it should never be -1
@@ -106,7 +107,7 @@ namespace VipixToolBox.Items
 					WorldGen.KillTile(myPlayer.pointedTileX,myPlayer.pointedTileY, false, false, false);
 					WorldGen.PlaceTile(myPlayer.pointedTileX,myPlayer.pointedTileY, (ushort)mod.TileType("FlyingHardBlockTile"));
 					if (Main.netMode == 1) NetMessage.SendTileSquare(-1, myPlayer.pointedTileX, myPlayer.pointedTileY, 1);
-					int id = mod.GetTileEntity<FlyingBlockTE>().Find(myPlayer.pointedTileX,myPlayer.pointedTileY);
+					int id = ModContent.GetInstance<FlyingBlockTE>().Find(myPlayer.pointedTileX,myPlayer.pointedTileY);
 					if (id != -1)
 					{
 						myTE = (FlyingBlockTE)TileEntity.ByID[id];

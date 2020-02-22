@@ -68,7 +68,7 @@ namespace VipixToolBox.Items
 				//this method determines if the pointed block is buildable and in range of the player
 				//it shows the item icon if true
 				//and it allows the actions in CanUseItem
-				VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>(mod);
+				VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>();
 				toolRange = Math.Max(baseRange, myPlayer.fargoRange);//blocks
 				//should have a connected solid tile (that is not empty nor a decorative element) or wall
 				//should also be empty or a non-solid tile
@@ -99,7 +99,7 @@ namespace VipixToolBox.Items
 
 			public override bool CanUseItem(Player player)
 			{
-				VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>(mod);
+				VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>();
 
 				if (player.altFunctionUse == 2)
 				{

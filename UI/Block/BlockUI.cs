@@ -61,7 +61,7 @@ namespace VipixToolBox.UI
 			//setting the UI at the mouse position
 			Mod myMod = ModLoader.GetMod("VipixToolBox");
 			Player player = Main.player[Main.myPlayer];
-			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>(myMod);
+			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>();
 			if (myPlayer.centerUI == 1)
 			{
 				backgroundPanel.Left.Set(myPlayer.tbMouseX - panelWidth/2 ,0f);//exceeding the coordinates of the screen seems already handled
@@ -80,7 +80,7 @@ namespace VipixToolBox.UI
 		{
 			Mod myMod = ModLoader.GetMod("VipixToolBox");
 			Player player = Main.player[Main.myPlayer];
-			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>(myMod);
+			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>();
 			myPlayer.blockTool = index;//direct correspondance between list index and tool index
 			visible = false;
 		}

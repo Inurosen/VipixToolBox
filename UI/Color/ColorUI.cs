@@ -153,7 +153,7 @@ namespace VipixToolBox.UI
 			//setting the palette at the mouse position
 			Mod myMod = ModLoader.GetMod("VipixToolBox");
 			Player player = Main.player[Main.myPlayer];
-			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>(myMod);
+			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>();
 			if (myPlayer.centerUI == 1)
 			{
 				backgroundPanel.Left.Set(myPlayer.tbMouseX - panelWidth/2 ,0f);//exceeding the coordinates of the screen seems already handled
@@ -175,9 +175,9 @@ namespace VipixToolBox.UI
 			//colorList[index].UIImageButtonTexture.Set();
 			Mod myMod = ModLoader.GetMod("VipixToolBox");
 			Player player = Main.player[Main.myPlayer];
-			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>(myMod);
+			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>();
 			//color button
-			player.GetModPlayer<VipixToolBoxPlayer>(myMod).colorByte = (byte)index;
+			player.GetModPlayer<VipixToolBoxPlayer>().colorByte = (byte)index;
 			visible = false;
 		}
 		public void DisableColor(int index)
@@ -194,11 +194,11 @@ namespace VipixToolBox.UI
 		{
 			Mod myMod = ModLoader.GetMod("VipixToolBox");
 			Player player = Main.player[Main.myPlayer];
-			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>(myMod);
+			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>();
 			if (index >=0 && index < 4)
 			{
 				//tool button
-				player.GetModPlayer<VipixToolBoxPlayer>(myMod).paintStatus = index;
+				player.GetModPlayer<VipixToolBoxPlayer>().paintStatus = index;
 			}
 			else if (index == 4)
 			{
@@ -212,7 +212,7 @@ namespace VipixToolBox.UI
 		{
 			Mod myMod = ModLoader.GetMod("VipixToolBox");
 			Player player = Main.player[Main.myPlayer];
-			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>(myMod);
+			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>();
 			if (myPlayer.centerUI == 2)
 			{
 				offset = new Vector2(evt.MousePosition.X - backgroundPanel.Left.Pixels, evt.MousePosition.Y - backgroundPanel.Top.Pixels);

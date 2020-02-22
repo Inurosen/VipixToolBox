@@ -25,7 +25,7 @@ namespace VipixToolBox.Commands
 		{
 			Mod myMod = ModLoader.GetMod("VipixToolBox");
 			Player player = Main.player[Main.myPlayer];
-			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>(myMod);
+			VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>();
 			/*
 			bool choice;
 			if (!bool.TryParse(args[0], out choice))

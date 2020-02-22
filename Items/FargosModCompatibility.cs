@@ -10,7 +10,7 @@ namespace VipixToolBox.Items
   {
     public override void UpdateAccessory (Item item, Player player, bool hideVisual)
     {
-      VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>(mod);
+      VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>();
       if (item.Name == "World Shaper Soul")//feel free to create an item with this display name
       {
         myPlayer.fargoRange = 54;//range of normal tools with fargo mod

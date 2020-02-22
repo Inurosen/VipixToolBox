@@ -24,7 +24,7 @@ namespace VipixToolBox.Items
       mossToolList.Add(TileID.BlueMoss);
       mossToolList.Add(TileID.PurpleMoss);
       mossToolList.Add(TileID.LavaMoss);
-      VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>(mod);
+      VipixToolBoxPlayer myPlayer = player.GetModPlayer<VipixToolBoxPlayer>();
       bool moddedStaff = false;
       float maxReach = 5.5f;//blocks. With testing I find 6 longer than vanilla reach and 5 shorter that vanilla reach
       if (item.type == ItemID.StaffofRegrowth && VipixToolBoxWorld.toolEnabled["StaffofRegrowthEdit"])

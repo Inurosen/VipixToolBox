@@ -14,32 +14,32 @@ namespace VipixToolBox.NPCs
       {
         //if (NPC.downedBoss3)
         //should be skeletron
-        shop.item[nextSlot].SetDefaults(mod.ItemType<Items.AutoHammer>());
+        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.AutoHammer>());
         nextSlot++;
-        shop.item[nextSlot].SetDefaults(mod.ItemType<Items.WallHammer>());
+        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.WallHammer>());
         nextSlot++;
       }
       if (type == NPCID.Painter)
       {
-        shop.item[nextSlot].SetDefaults(mod.ItemType<Items.ColorPalette>());
+        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.ColorPalette>());
         nextSlot++;
       }
       if (type == NPCID.Dryad)
       {
-        shop.item[nextSlot].SetDefaults(mod.ItemType<Items.RattlesnakeWand>());
+        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.RattlesnakeWand>());
         shop.item[nextSlot].shopCustomPrice = Item.buyPrice(1, 0, 0, 0);
         nextSlot++;
-        shop.item[nextSlot].SetDefaults(mod.ItemType<Items.BlockWand>());
+        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.BlockWand>());
         nextSlot++;
       }
       if (type == NPCID.Wizard)
       {
-        shop.item[nextSlot].SetDefaults(mod.ItemType<Items.LevitationWand>());
+        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.LevitationWand>());
         nextSlot++;
       }
       if (type == NPCID.Mechanic)
       {
-        shop.item[nextSlot].SetDefaults(mod.ItemType<Items.SwapPickaxe>());
+        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.SwapPickaxe>());
         nextSlot++;
       }
     }
